@@ -1,0 +1,74 @@
+{
+    "editor.fontFamily": "ComicMonoNF",
+    "editor.fontSize": 16,
+    "editor.fontLigatures": true,
+    "explorer.confirmDelete": false,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "explicit"
+    },
+    "workbench.iconTheme": "material-icon-theme",
+    "files.eol": "\n",
+    "security.workspace.trust.banner": "always",
+    "security.workspace.trust.startupPrompt": "always",
+    "bracketPairColorizer.depreciation-notice": false,
+    "workbench.colorTheme": "One Dark Pro Darker",
+    "workbench.startupEditor": "none",
+    "python.formatting.provider": "black",
+    "vim.useSystemClipboard": true,
+    // "workbench.activityBar.location": "hidden",
+    "workbench.editor.empty.hint": "hidden",
+    "redhat.telemetry.enabled": true,
+    "continue.enableTabAutocomplete": false,
+    "git.openRepositoryInParentFolders": "never",
+    // C / C++
+    "[c]": {
+        "editor.defaultFormatter": "xaver.clang-format"
+    },
+    // Go
+    "[go]": {
+        "editor.formatOnSave": true,
+    },
+    "go.useLanguageServer": true,
+    "gopls": {
+        "formatting.gofumpt": true,
+    },
+    "go.formatTool": "gofumpt",
+    "go.lintTool": "golangci-lint",
+    "go.lintFlags": [
+        "--fast"
+    ],
+    // Rust
+    // Python
+    "ruff.nativeServer": true,
+    "jupyter.widgetScriptSources": [
+        "jsdelivr.com",
+        "unpkg.com"
+    ],
+    "[python]": {
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "editor.formatOnType": true,
+        "editor.formatOnSave": true
+    },
+    // Javascript
+    "[javascript]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
+    "[typescriptreact]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[scss]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[css]": {
+        "editor.defaultFormatter": "aeschli.vscode-css-formatter"
+    }
+}
