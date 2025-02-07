@@ -7,6 +7,12 @@ plugins=(git zsh-autosuggestions kubectl kubectx kube-ps1 npm argocd rust golang
 source $ZSH/oh-my-zsh.sh
 
 # Ainyava
+#
+# envs
+export QT_QPA_PLATFORMTHEME=gtk2
+
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # kubectl
 export KUBE_EDITOR=nvim
@@ -33,10 +39,31 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 [ -s "/home/ainyava/.bun/_bun" ] && source "/home/ainyava/.bun/_bun"
 
+# Rust
+. "$HOME/.cargo/env" 
+
 # utils
-alias dfimage="docker run -v /var/run/docker.sock:/var/run/docker.sock --rm alpine/dfimage"
+alias wtc='git commit -m "$(curl -s https://whatthecommit.com/index.txt)"'
+alias xcopy="xclip -sel clip"
+alias xpaste="xclip -o -selection clipboard"
 alias 119="curl 'https://api.codebazan.ir/time-date/?td=all'"
-export QT_QPA_PLATFORMTHEME=gtk2
+alias dfimage="docker run -v /var/run/docker.sock:/var/run/docker.sock --rm alpine/dfimage"
+alias dive="docker run -ti --rm  -v /var/run/docker.sock:/var/run/docker.sock wagoodman/dive"
+
+function nv() {
+  alacritty --class NeoVim -e zsh -c "source ~/.zshrc && cd \"$1\" && nvim ." & disown
+}
+function uvnv() {
+  alacritty --class NeoVim -e zsh -c "source ~/.zshrc && uvactivate $1 && cd \"$2\" && nvim ." & disown
+
+}
+function uvvenv() {
+  uv virtualenv ~/.uv/$1;
+}
+function uvactivate() {
+  source ~/.uv/$1/bin/activate;
+}
+
 
 ## Personal Variables
 export V2RAY=socks5h://localhost:2080
@@ -44,5 +71,6 @@ export V2RAY=socks5h://localhost:2080
 # Configurations
 export PATH=$PATH:~/.local/programs/go/bin:~/.local/bin
 
-# Rust
-. "$HOME/.cargo/env" 
+# welcome
+fortune | cowsay -f /usr/share/cowsay/cows/eyes.cow | centerize | lolcat
+
